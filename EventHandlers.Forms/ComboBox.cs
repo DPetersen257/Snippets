@@ -1,13 +1,13 @@
 ﻿namespace EpiqExtensions.Forms.EventHandlers;
 
-public class ComboBoxHandlers
+public static class ComboBoxHandlers
 {
     /// <summary>
     /// Automatically resizes a ComboBox dropdown width to fit the contents
     /// </summary>
     /// <param name="sender">Combobox that fired the event</param>
     /// <param name="e">Event arguments</param>
-    private void ComboBoxOutputType_DropDown(object sender, EventArgs e)
+    private static void ComboBoxAutoWidthDropDown(object sender, EventArgs e)
     {
         var senderComboBox = (ComboBox)sender;
 
