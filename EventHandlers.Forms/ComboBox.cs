@@ -7,8 +7,9 @@ public static class ComboBoxHandlers
     /// </summary>
     /// <param name="sender">Combobox that fired the event</param>
     /// <param name="e">Event arguments</param>
-    private static void ComboBoxAutoWidthDropDown(object sender, EventArgs e)
+    public static void ComboBoxAutoWidthDropDown(object sender, EventArgs e)
     {
+        ArgumentNullException.ThrowIfNull(sender, nameof(sender));
         var senderComboBox = (ComboBox)sender;
 
         int width = senderComboBox.DropDownWidth;
