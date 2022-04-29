@@ -1,9 +1,13 @@
-﻿  public static class EnumExtensions<T>
+﻿
+namespace EpiqExtensions.Common;
+
+/// <summary>
+/// Source https://gist.github.com/cgbeutler/699e96f4868a7ccdd004d1daf38407d9
+/// </summary>
+/// <typeparam name="T"></typeparam>
+public static class EnumExtensions<T>
     where T : struct, Enum
   {
-    /// <summary> True if the enum has the FlagsAttribute </summary>
-    public static readonly bool HasFlagsAttribute = typeof(T).GetCustomAttributes(typeof(FlagsAttribute), false).Length > 0;
-
     /// <summary> An list of the enum values ordered as defined. Can contain duplicates. </summary>
     public static readonly IReadOnlyList<T> Values = Enum.GetValues( typeof( T ) ).Cast<T>().ToList();
     /// <summary> An ascending list of the enum values ordered by value. Duplicates removed. </summary>
